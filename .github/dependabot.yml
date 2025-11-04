@@ -10,7 +10,6 @@ updates:
     # Keep both direct and indirect dependency updates by default
     allow:
       - dependency-type: "all"
-    versioning-strategy: auto
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -18,7 +17,6 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - dependencies
-    versioning-strategy: widen
     # Optionally enabled security-only updates for GitHub Actions
     allow:
       - dependency-type: "direct"

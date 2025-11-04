@@ -9,14 +9,14 @@
         "sourceType": "module"
     },
     "rules": {
-        "indent": ["error", "tab"],
-        "linebreak-style": ["error", "windows"],
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"],
-        "no-unused-vars": ["warn"],
-        "no-console": "off",
-        "no-mixed-spaces-and-tabs": ["warn"],
-        "no-inner-declarations": ["warn"],
-        "no-useless-escape": ["warn"]
+      "indent": ["error", "tab"],
+      "linebreak-style": "off",
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+      "no-unused-vars": ["warn"],
+      "no-console": "off",
+      "no-mixed-spaces-and-tabs": ["warn"],
+      "no-inner-declarations": ["warn"],
+      "no-useless-escape": ["warn"]
     }
 }
