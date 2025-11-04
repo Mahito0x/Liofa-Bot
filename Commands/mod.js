@@ -13,8 +13,8 @@ async function displayInfractions(interaction, target) {
 		.setColor(0xa60000)
 		.setTitle(bold(target.username))
 		.addFields(
-			{ name : 'Minutes since last infraction', value : bold(timeSinceLastInfraction)},
-			{ name : 'Warnings given', value : bold(warningCount)})
+			{ name : 'Minutes since last infraction', value : bold(timeSinceLastInfraction) },
+			{ name : 'Warnings given', value : bold(warningCount) })
 		.setThumbnail('https://cdn.discordapp.com/avatars/' + target.id + '/' + target.avatar + '.png')
 		.setFooter({ text : 'Settings listed are for ' + interaction.guild.id });
 	return infractionsEmbed;
@@ -60,7 +60,7 @@ module.exports = {
 		async function info(interaction) {
 			let buttons = await modButtons(true, target);
 
-			if(GuildData.Watchlist[target.id] != null) {
+			if (GuildData.Watchlist[target.id] != null) {
 				if (GuildData.Watchlist[target.id].warnings != 0) buttons = await modButtons(false, target);
 
 				return interaction.reply({ embeds: [await displayInfractions(interaction, target)], components : [buttons] });
