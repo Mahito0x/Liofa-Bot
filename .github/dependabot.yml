@@ -7,11 +7,10 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - dependencies
-    # Enable Dependabot security updates for npm (will also surface vulnerable transitive deps)
-    security-updates: true
     # Keep both direct and indirect dependency updates by default
     allow:
       - dependency-type: "all"
+    versioning-strategy: auto
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -19,8 +18,7 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - dependencies
-    # Ensure security updates for GitHub Actions workflow dependencies
-    security-updates: true
+    versioning-strategy: widen
     # Optionally enabled security-only updates for GitHub Actions
     allow:
       - dependency-type: "direct"
