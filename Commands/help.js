@@ -33,40 +33,49 @@ module.exports = {
 		}
 
 		if (typeof comm != 'string') {
-			return helpList(inputs, interaction);
+			return helpList();
 		}
 		else if (!Data.Permissions[comm]) {
 			return interaction.reply('that\'s not a valid command!');
 		}
-
 		else {
-			return helpComm(inputs, interaction);
+			return helpCommand();
 		}
-//Embed for commands
-		async function helpComm(args) {
+		// Embed for commands
+		async function helpCommand() {
 			const command = interaction.client.commands.get(comm);
-			const helpComm = new EmbedBuilder()
+			const helpEmbed = new EmbedBuilder()
 				.setColor('#ffffff')
-				.addFields({ name : '__**Name:**__', value : '> ' + command.data.name })
+				.addFields({ name: '__**Name:**__', value: '> ' + command.data.name });
 			if (command.data.description) {
-				helpComm.addFields({ name : '__**Description:**__', value : '> *' + command.data.description + '*' });}
+				helpEmbed.addFields({
+					name: '__**Description:**__',
+					value: '> *' + command.data.description + '*',
+				});
+			}
 			if (command.usage) {
-				helpComm.addFields({ name : '__**Usage:**__', value : '> `' + prefix + command.data.name + command.usage + '`' });}
-			return interaction.reply({ embeds : [helpComm] });
+				helpEmbed.addFields({
+					name: '__**Usage:**__',
+					value: '> `' + prefix + command.data.name + command.usage + '`',
+				});
+			}
+			return interaction.reply({ embeds: [helpEmbed] });
 		}
-//Main Embed
-		async function helpList(args) {
-			var info = '';
+		// Main Embed
+		async function helpList() {
+			let info = '';
 			for (const [value] of Object.entries(Data.Permissions)) {
 				info = info.concat(value + '\n');
 			}
-			info = info.concat(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
+			info = info.concat(
+				`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`,
+			);
 
 			const helpEmbed = new EmbedBuilder()
 				.setColor('#ffffff')
 				.setTitle('Here\'s a list of all my commands:\n ')
-				.setDescription(info)
-			return interaction.reply({ embeds : [helpEmbed] });
+				.setDescription(info);
+			return interaction.reply({ embeds: [helpEmbed] });
 		}
 	},
 };

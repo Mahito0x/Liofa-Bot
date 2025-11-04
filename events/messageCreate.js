@@ -12,30 +12,57 @@ module.exports = {
 			const result = await functions.liofaCheck(MessageContent);
 			if (!result) return;
 
-
 			const GuildData = functions.liofaRead(msg.guild.id);
 			// Checks list of allowed languages
-			if (!GuildData.Settings.languages.includes(result.code) && parseInt(result.percent) >= 90) {
-
+			if (
+				!GuildData.Settings.languages.includes(result.code) &&
+        parseInt(result.percent) >= 90
+			) {
 				// Warnings Check
 				const warnCount = functions.liofaMod(msg, msg.author.id);
-				const msgBeforeDeletion = parseInt(GuildData.Settings.warnings) + parseInt(GuildData.Settings.startwarnings);
-				if (warnCount < msgBeforeDeletion && warnCount > GuildData.Settings.startwarnings) {
+				const msgBeforeDeletion =
+          parseInt(GuildData.Settings.warnings) +
+          parseInt(GuildData.Settings.startwarnings);
+				if (
+					warnCount < msgBeforeDeletion &&
+          warnCount > GuildData.Settings.startwarnings
+				) {
 					const buttons = new ActionRowBuilder();
 					let printButtons = false;
 					if (GuildData.Settings.buttons.includes(true)) {
 						printButtons = true;
 						if (GuildData.Settings.buttons[0]) {
-							buttons.addComponents(new ButtonBuilder().setURL('https://translate.google.com').setLabel('🌍 Translator').setStyle(ButtonStyle.Link));
+							buttons.addComponents(
+								new ButtonBuilder()
+									.setURL('https://translate.google.com')
+									.setLabel('🌍 Translator')
+									.setStyle(ButtonStyle.Link),
+							);
 						}
 						if (GuildData.Settings.buttons[1]) {
-							buttons.addComponents(new ButtonBuilder().setCustomId('result.name').setLabel(result.name + ' [' + result.percent + '%]').setStyle(ButtonStyle.Primary).setDisabled(true));
+							buttons.addComponents(
+								new ButtonBuilder()
+									.setCustomId('result.name')
+									.setLabel(result.name + ' [' + result.percent + '%]')
+									.setStyle(ButtonStyle.Primary)
+									.setDisabled(true),
+							);
 						}
 						if (GuildData.Settings.buttons[2]) {
-							buttons.addComponents(new ButtonBuilder().setCustomId('mod undo ' + msg.author.id).setLabel('Undo').setStyle(ButtonStyle.Danger));
+							buttons.addComponents(
+								new ButtonBuilder()
+									.setCustomId('mod undo ' + msg.author.id)
+									.setLabel('Undo')
+									.setStyle(ButtonStyle.Danger),
+							);
 						}
 						if (GuildData.Settings.buttons[3]) {
-							buttons.addComponents(new ButtonBuilder().setCustomId('invite links').setLabel('Get Liofa!').setStyle(ButtonStyle.Success));
+							buttons.addComponents(
+								new ButtonBuilder()
+									.setCustomId('invite links')
+									.setLabel('Get Liofa!')
+									.setStyle(ButtonStyle.Success),
+							);
 						}
 					}
 
@@ -43,47 +70,87 @@ module.exports = {
 					// Checks if output for given language is available
 					if (typeof LiofaMessages[result.code] === 'string') {
 						if (printButtons) {
-							msg.reply({ content : '<@' + msg.author.id + '> **' + LiofaMessages[result.code] + '**', components : [buttons] });
+							msg.reply({
+								content:
+                  '<@' +
+                  msg.author.id +
+                  '> **' +
+                  LiofaMessages[result.code] +
+                  '**',
+								components: [buttons],
+							});
 						}
 						else {
-							msg.reply({ content : '<@' + msg.author.id + '> **' + LiofaMessages[result.code] + '**' });
+							msg.reply({
+								content:
+                  '<@' +
+                  msg.author.id +
+                  '> **' +
+                  LiofaMessages[result.code] +
+                  '**',
+							});
 						}
 					}
 					else {
 						if (printButtons) {
-							msg.reply({ content : '**Please speak English.**', components : [buttons] });
+							msg.reply({
+								content: '**Please speak English.**',
+								components: [buttons],
+							});
 						}
 						else {
-							msg.reply({ content : '**Please speak English.**' });
+							msg.reply({ content: '**Please speak English.**' });
 						}
-						msg.channel.send(result.name + ' must be added to Languages. Please report this bug on my support server A link can be found in my bio. code: `[' + result.code + ']`');
+						msg.channel.send(
+							result.name +
+                ' must be added to Languages. Please report this bug on my support server A link can be found in my bio. code: `[' +
+                result.code +
+                ']`',
+						);
 					}
 				}
 				else if (warnCount == msgBeforeDeletion) {
-					msg.reply('<@' + msg.author.id + '> All further messages will be deleted unless you speak in English');
+					msg.reply(
+						'<@' +
+              msg.author.id +
+              '> All further messages will be deleted unless you speak in English',
+					);
 				}
 				else if (warnCount > msgBeforeDeletion) {
 					const channelId = GuildData.Settings.modlog;
-					//Check if modlog is set and channel exists
-					if (channelId != null && msg.client.channels.cache.has(channelId)){
-						function modLog(interaction, warnings) {
+					// Check if modlog is set and channel exists
+					if (channelId != null && msg.client.channels.cache.has(channelId)) {
+						const modLog = (interaction, warnings) => {
 							const modlogEmbed = new EmbedBuilder()
 								.setColor(0xa60000)
-								.setAuthor({ name: interaction.author.username, iconURL: 'https://cdn.discordapp.com/avatars/' + interaction.author.id + '/' + interaction.author.avatar + '.png'})
+								.setAuthor({
+									name: interaction.author.username,
+									iconURL:
+                    'https://cdn.discordapp.com/avatars/' +
+                    interaction.author.id +
+                    '/' +
+                    interaction.author.avatar +
+                    '.png',
+								})
 								.setTitle('Message Deleted')
 								.addFields(
-									{ name : 'Message:', value : interaction.content},
-									{ name : 'Warnings given:', value : functions.boldText(warnings)});
+									{ name: 'Message:', value: interaction.content },
+									{
+										name: 'Warnings given:',
+										value: functions.boldText(warnings),
+									},
+								);
 							return modlogEmbed;
-								}
-    				const channel = msg.client.channels.cache.get(channelId);
-						channel.send({ embeds: [await modLog(msg, warnCount)]});}
+						};
+						const channel = msg.client.channels.cache.get(channelId);
+						channel.send({ embeds: [modLog(msg, warnCount)] });
+					}
 					msg.delete();
 				}
 			}
 		}
-		// Returns error for when language cannot be detected
 		catch (err) {
+			// Returns error for when language cannot be detected
 			console.log(msg.content);
 			console.log(err);
 			return;
@@ -95,15 +162,24 @@ module.exports = {
 			const GuildData = functions.liofaRead(txt.guild.id);
 
 			if (functions.liofaPrefixCheck(txt)) {
-				const args = txt.content.slice(GuildData.Settings.prefix.length).trim().split(' ');
+				const args = txt.content
+					.slice(GuildData.Settings.prefix.length)
+					.trim()
+					.split(' ');
 
 				// Checks command exists
 				const command = txt.client.commands.get(args.shift().toLowerCase());
 				if (!command) return true;
 
 				// Checks required channel permissions
-				if(!txt.channel.permissionsFor(txt.guild.me).has(['VIEW_CHANNEL', 'SEND_MESSAGES', 'MANAGE_MESSAGES'])){
-					txt.author.send('I don\'t have sufficient permissions required to run the command in that channel\!😭\nPlease ensure I have these channel permissions:\n > **View Channel**\n > **Send Messages**\n > **Manage Messages**');
+				if (
+					!txt.channel
+						.permissionsFor(txt.guild.me)
+						.has(['VIEW_CHANNEL', 'SEND_MESSAGES', 'MANAGE_MESSAGES'])
+				) {
+					txt.author.send(
+						'I don\'t have sufficient permissions required to run the command in that channel!😭\nPlease ensure I have these channel permissions:\n > **View Channel**\n > **Send Messages**\n > **Manage Messages**',
+					);
 					return false;
 				}
 
@@ -113,7 +189,10 @@ module.exports = {
 						command.execute(txt);
 					}
 					else {
-						txt.reply({ content : 'You have insufficient permissions 😬', ephemeral : true });
+						txt.reply({
+							content: 'You have insufficient permissions 😬',
+							ephemeral: true,
+						});
 					}
 					return false;
 				}

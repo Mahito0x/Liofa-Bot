@@ -67,14 +67,16 @@ function roleToID(identifier, msg) {
 		return identifier;
 	}
 	else if (identifier.match(exp)) {
-		while(isNaN(identifier.charAt(0))) {
+		while (isNaN(identifier.charAt(0))) {
 			identifier = identifier.substring(1);
 		}
 		identifier = identifier.substring(0, identifier.length - 1);
 		return identifier;
 	}
 	else {
-		msg.channel.send('Something went wrong converting the role name. Maybe try using the role ID instead');
+		msg.channel.send(
+			'Something went wrong converting the role name. Maybe try using the role ID instead',
+		);
 		return undefined;
 	}
 }
@@ -82,7 +84,9 @@ function roleToID(identifier, msg) {
 // Converts user IDs into their name
 function userToString(identifier, msg) {
 	if (!isNaN(identifier) && msg.guild.members.cache.has(identifier)) {
-		const LookUpMember = msg.guild.members.cache.find(member => member.id === identifier);
+		const LookUpMember = msg.guild.members.cache.find(
+			(member) => member.id === identifier,
+		);
 		return LookUpMember.displayName;
 	}
 	else if (typeof identifier == 'string') {
@@ -98,19 +102,21 @@ function userToID(identifier, msg) {
 	// eslint-disable-next-line no-useless-escape
 	const exp1 = new RegExp(/^\<\@\d{15,}\>$/);
 	// eslint-disable-next-line no-useless-escape
-	const exp2 = new RegExp(/^\<\@\!\d{15,}\>$/);
+	const exp2 = new RegExp(/^\<\@!\d{15,}\>$/);
 	if (!isNaN(identifier)) {
 		return identifier;
 	}
 	else if (identifier.match(exp1) || identifier.match(exp2)) {
-		while(isNaN(identifier.charAt(0))) {
+		while (isNaN(identifier.charAt(0))) {
 			identifier = identifier.substring(1);
 		}
 		identifier = identifier.substring(0, identifier.length - 1);
 		return identifier;
 	}
 	else {
-		msg.channel.send('Something went wrong converting the username. Maybe try using the user ID instead');
+		msg.channel.send(
+			'Something went wrong converting the username. Maybe try using the user ID instead',
+		);
 		return undefined;
 	}
 }
@@ -118,7 +124,9 @@ function userToID(identifier, msg) {
 // Converts Channels IDs to their Name
 function channelToString(identifier, msg) {
 	if (!isNaN(identifier) && msg.guild.channels.cache.has(identifier)) {
-		const LookUpChannel = msg.guild.channels.cache.find(channel => channel.id === identifier);
+		const LookUpChannel = msg.guild.channels.cache.find(
+			(channel) => channel.id === identifier,
+		);
 		let output = LookUpChannel.name;
 		if (LookUpChannel.type === 'GUILD_CATEGORY') output = '📁 ' + output;
 		if (LookUpChannel.type === 'GUILD_TEXT') output = '✍ ' + output;
@@ -146,17 +154,18 @@ function channelToID(identifier, msg) {
 		return identifier;
 	}
 	else if (identifier.match(exp1)) {
-		while(isNaN(identifier.charAt(0))) {
+		while (isNaN(identifier.charAt(0))) {
 			identifier = identifier.substring(1);
 		}
 		identifier = identifier.substring(0, identifier.length - 1);
 		return identifier;
 	}
 	else {
-		msg.channel.send('Something went wrong converting the channel name. Maybe try using the channel ID instead');
+		msg.channel.send(
+			'Something went wrong converting the channel name. Maybe try using the channel ID instead',
+		);
 		return undefined;
 	}
-
 }
 
 // Removes an array of words from a string

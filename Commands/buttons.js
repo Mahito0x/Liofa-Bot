@@ -28,7 +28,16 @@ module.exports = {
 		GuildData.Settings.buttons[3] ? getEmoji = '✅' : getEmoji = '❌';
 		const buttonEmbed = new EmbedBuilder()
 			.setColor('#00ff08')
-			.setDescription(transEmoji + ' Translator\n' + langEmoji + ' Language\n' + undoEmoji + ' Undo\n' + getEmoji + ' Get Liofa ')
+			.setDescription(
+				transEmoji +
+          ' Translator\n' +
+          langEmoji +
+          ' Language\n' +
+          undoEmoji +
+          ' Undo\n' +
+          getEmoji +
+          ' Get Liofa ',
+			);
 		interaction.reply({ embeds : [buttonEmbed] });
 	},
 };
