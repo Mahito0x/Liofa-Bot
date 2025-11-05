@@ -55,7 +55,7 @@ jobs:
 
       - name: Test bot starts without errors
         run: |
-          timeout 30s node index.js &
+          timeout 30s node start.js &
           BOT_PID=$!
           sleep 10
           if ps -p $BOT_PID > /dev/null; then
