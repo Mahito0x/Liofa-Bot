@@ -1,44 +1,88 @@
-# Liofa Bot
+<div align="center">
 
-### A Discord Bot for dealing with people speaking other languages
-### [Invite Link](https://discord.com/oauth2/authorize?client_id=866186816645890078&permissions=274877982720&scope=applications.commands%20bot)
-### [Support Server](https://discord.gg/ay7uzuHctN)
-### [Github](https://github.com/TheFacelessOne/Liofa-Bot)
+# Liofa Discord Bot
 
-| :exclamation: | This bot is an ongoing project, if Liofa is missing a feature that you would like, please let me know on our discord. Enjoy! ❤   |
-|------------|:-----------------------------------------|
-  
+### A Discord bot for multilingual server management
+
+[![Invite Liofa](https://img.shields.io/badge/Invite-Liofa-5865F2?style=flat&logo=discord&logoColor=white&labelColor=404EED)](https://discord.com/oauth2/authorize?client_id=866186816645890078&permissions=274877982720&scope=applications.commands%20bot)
+[![Support Server](https://img.shields.io/badge/Support-Server-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/469bQeWQYc)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat)
+[![Node.js 18](https://img.shields.io/badge/Node.js-18-2C2F33?style=flat&logo=node.js&logoColor=white&labelColor=339933&color=FFD43B&border_radius=999)](https://nodejs.org/)
+[![CI Tests](https://img.shields.io/github/actions/workflow/status/Mahito0x/Liofa-Bot/ci.yml?label=CI%20Tests)](https://github.com/Mahito0x/Liofa-Bot/actions/workflows/ci.yml)
+
+
+</div>
+
+---
+
+> [!NOTE]
+> This bot is an ongoing project. If Liofa is missing a feature you'd like to see, please share your feedback on our Discord server.
 
 ## Features
 
-- Language Detection
-	- Uses google's compact language detector library to detect languages
-	- Responds to chat messages in their own language
+### Language Detection
+Liofa uses the [Compact Language Detector (CLD2)](https://github.com/CLD2Owners/cld2) to automatically detect languages in messages and respond in the appropriate language.
 
-- Moderation
-	- Whitelist approved languages
-	- Configure how many messages are allowed before users receive a warning ```default: 0```
-	- Configure how many warnings are given ```default: 3```
-	- Configure how many minutes a warning is remembered for ```default: 30```
-	- Deletes messages after max warnings are given
-	- View user's warning count
-	- Send moderation actions to a specified channel using ```/modlog set```
+### Moderation
+Configure flexible language moderation settings to manage multilingual conversations:
 
-- Control
-	- Configure Liofa to only watch certain channels/channel categories
-	- Configure Liofa to ignore channels with certain keywords (for ticket channels or similar)
-	- Configure phrases that Liofa will ignore (useful for slang)
-	- Role based per command permission system
+- Whitelist approved languages for your server
+- Set message threshold before warnings are issued `(default: 0)`
+- Configure warning limit before action is taken `(default: 3)`
+- Define warning expiration time in minutes `(default: 30)`
+- Automatic message deletion after maximum warnings
+- View individual user warning counts
+- Log moderation actions to a dedicated channel using `/modlog set`
 
-- Cosmetic
-	- Configure the information given by Liofa with the ```/buttons``` command
+### Control
+Fine-tune Liofa's behavior to match your server's needs:
+- Monitor specific channels or channel categories
+- Ignore channels matching certain keywords (useful for ticket systems)
+- Define custom phrases for Liofa to ignore (helpful for slang or common terms)
+- Role-based permission system for granular command access
 
-  
+### Customization
+- Tailor Liofa’s interface using the /buttons command to choose which helpful buttons are shown to users.
 
-##### About Liofa
+## About Liofa
 
-Liofa (or Líofa) is Irish for "fluent".
+The name "Liofa" (or "Líofa") means "fluent" in Irish.
 
-I came up with the idea because I was an administrator for a discord server where it was against the rules to speak languages other than English. I found it frustrating to have to translate "Please speak English" into so many languages that I decided to make a command using another Discord bot to do this instead. Then I had the idea to just automate the process with my own bot.
+This project originated from a practical need: managing language rules in a Discord server where only English was permitted. Manually translating "Please speak English" into multiple languages became tedious, leading to the development of an automated solution. What started as a simple translation command evolved into a comprehensive multilingual moderation tool.
 
-I hope you all enjoy my little bot. If you have any questions or suggestions, please do let me know. I started this project when I was still relatively new to coding and with the help of some fantastic people, I can say I'm proud of what it has become.
+Liofa represents a journey of growth in both coding skills and community collaboration. Thanks to feedback and support from many contributors, it has developed into a tool that helps communities manage language diversity effectively.
+
+
+
+---
+<div align="center">
+
+
+
+### 🙏 Acknowledgements
+
+This project continues to evolve thanks to the support of its users and contributors.  
+We extend our sincere appreciation to everyone who reports issues, suggests enhancements, and provides valuable feedback.  
+Your involvement plays an essential role in improving Liofa’s stability, usability, and impact.
+
+We also acknowledge the developers and community members who contribute code, review pull requests, refine documentation, and assist others.  
+Your contributions are deeply valued.
+
+
+---
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24&height=100&section=footer" width="100%">
+
+**Liofa** • *Your Server, Your Language Rules*
+
+Made with ❤️ by [TheFacelessOne](https://github.com/TheFacelessOne)
+
+<a href="https://discord.gg/469bQeWQYc">
+  <img src="https://img.shields.io/discord/699587669059174461?color=7289da&label=Join%20Our%20Discord&logo=discord&logoColor=white&style=for-the-badge" alt="Discord">
+</a>
+
+**© 2024 Liofa • All Rights Reserved**
+
+</div>
+
+---
