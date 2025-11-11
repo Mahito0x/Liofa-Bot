@@ -2,6 +2,7 @@
   "name": "liofa",
   "version": "3.0.0",
   "description": "a discord bot for languages",
+  "type": "module",
   "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
