@@ -33,6 +33,6 @@
     "fs": "^0.0.1-security"
   },
   "devDependencies": {
-    "eslint": "^9.39.1"
+    "eslint": "^8.57.1"
   }
 }

@@ -10,6 +10,11 @@ updates:
     # Keep both direct and indirect dependency updates by default
     allow:
       - dependency-type: "all"
+    # ESLint v9 reuires Node.js 20+, but the project uses Node.js 18 in production
+    ignore:
+      - dependency-name: "eslint"
+        versions: [">=9"]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
