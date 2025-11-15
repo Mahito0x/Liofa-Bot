@@ -4,6 +4,7 @@
 
 ### A Discord bot for multilingual server management
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2ff774ae4d64a58a157b9eda9cfc690)](https://app.codacy.com/gh/Mahito0x/Liofa-Bot?utm_source=github.com&utm_medium=referral&utm_content=Mahito0x/Liofa-Bot&utm_campaign=Badge_Grade)
 [![Invite Liofa](https://img.shields.io/badge/Invite-Liofa-5865F2?style=flat&logo=discord&logoColor=white&labelColor=404EED)](https://discord.com/oauth2/authorize?client_id=866186816645890078&permissions=274877982720&scope=applications.commands%20bot)
 [![Support Server](https://img.shields.io/badge/Support-Server-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/469bQeWQYc)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat)
