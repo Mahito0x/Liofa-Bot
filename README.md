@@ -1,39 +1,39 @@
 # Liofa Bot
 
 ### A Discord Bot for dealing with people speaking other languages
+
 ### [Invite Link](https://discord.com/oauth2/authorize?client_id=866186816645890078&permissions=274877982720&scope=applications.commands%20bot)
+
 ### [Support Server](https://discord.gg/ay7uzuHctN)
+
 ### [Github](https://github.com/TheFacelessOne/Liofa-Bot)
 
-| :exclamation: | This bot is an ongoing project, if Liofa is missing a feature that you would like, please let me know on our discord. Enjoy! ❤   |
-|------------|:-----------------------------------------|
-  
+| :exclamation: | This bot is an ongoing project, if Liofa is missing a feature that you would like, please let me know on our discord. Enjoy! ❤ |
+| ------------- | :------------------------------------------------------------------------------------------------------------------------------ |
 
 ## Features
 
 - Language Detection
-	- Uses google's compact language detector library to detect languages
-	- Responds to chat messages in their own language
+  - Uses google's compact language detector library to detect languages
+  - Responds to chat messages in their own language
 
 - Moderation
-	- Whitelist approved languages
-	- Configure how many messages are allowed before users receive a warning ```default: 0```
-	- Configure how many warnings are given ```default: 3```
-	- Configure how many minutes a warning is remembered for ```default: 30```
-	- Deletes messages after max warnings are given
-	- View user's warning count
-	- Send moderation actions to a specified channel using ```/modlog set```
+  - Whitelist approved languages
+  - Configure how many messages are allowed before users receive a warning `default: 0`
+  - Configure how many warnings are given `default: 3`
+  - Configure how many minutes a warning is remembered for `default: 30`
+  - Deletes messages after max warnings are given
+  - View user's warning count
+  - Send moderation actions to a specified channel using `/modlog set`
 
 - Control
-	- Configure Liofa to only watch certain channels/channel categories
-	- Configure Liofa to ignore channels with certain keywords (for ticket channels or similar)
-	- Configure phrases that Liofa will ignore (useful for slang)
-	- Role based per command permission system
+  - Configure Liofa to only watch certain channels/channel categories
+  - Configure Liofa to ignore channels with certain keywords (for ticket channels or similar)
+  - Configure phrases that Liofa will ignore (useful for slang)
+  - Role based per command permission system
 
 - Cosmetic
-	- Configure the information given by Liofa with the ```/buttons``` command
-
-  
+  - Configure the information given by Liofa with the `/buttons` command
 
 ##### About Liofa
 
