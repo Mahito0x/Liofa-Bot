@@ -1,8 +1,8 @@
-const functions = require('../functions.js');
+const functions = require("../functions.js");
 
 module.exports = {
-	name: 'GuildCreate',
-	execute(server) {
-		functions.liofaJoin(server.id);
-	},
+  name: "GuildCreate",
+  execute(server) {
+    functions.liofaJoin(server.id);
+  },
 };
