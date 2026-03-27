@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/TheFacelessOne/Liofa-Bot#readme",
   "dependencies": {
+    "discord.js": "^14.24.2",
     "cld": "^2.10.1",
-    "discord.js": "^14.11.0",
     "dotenv": "^16.6.1",
     "fs": "^0.0.1-security"
   },
