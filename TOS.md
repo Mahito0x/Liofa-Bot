@@ -44,8 +44,8 @@ Liofa - a Discord moderation bot focused on moderating non-English languages and
 - **Permission Management:** Role-based access control for bot commands and features
 - **Moderation Tools:** Warning systems, watchlists, and automated moderation actions with configurable expiration periods
 - **Logging:** Tracks moderation actions and filtered content for server administrators
-> [!NOTE] 
-> Self-hosted versions may behave differently depending on modifications by the host.
+  > [!NOTE]
+  > Self-hosted versions may behave differently depending on modifications by the host.
 
 ### 2.1 Third-Party Hosting
 
@@ -62,6 +62,7 @@ If you choose to self-host or fork the Bot:
 ## 3. User Eligibility
 
 You must:
+
 - Be at least 13 years old (or the minimum age required in your country) to use Discord and this Bot
 - Have the necessary permissions to invite and configure bots in your Discord server
 - Follow all applicable local, national, and international laws
@@ -74,12 +75,12 @@ You must:
 
 Liofa collects and stores the following data to provide its services:
 
-| Data Type | Description | Purpose | Storage Location |
-|-----------|-------------|---------|------------------|
-| Server Settings | Server ID, prefix, language settings, filter configurations | Bot functionality | Local storage (`/Server Data`) |
-| Whitelist Data | Whitelisted words, channels, roles | Content filtering | Local storage |
-| Warning Records | User ID, server ID, warning count, timestamps | Moderation system | Local storage |
-| Permission Settings | Role IDs, permission configurations | Access control | Local storage |
+| Data Type           | Description                                                 | Purpose           | Storage Location               |
+| ------------------- | ----------------------------------------------------------- | ----------------- | ------------------------------ |
+| Server Settings     | Server ID, prefix, language settings, filter configurations | Bot functionality | Local storage (`/Server Data`) |
+| Whitelist Data      | Whitelisted words, channels, roles                          | Content filtering | Local storage                  |
+| Warning Records     | User ID, server ID, warning count, timestamps               | Moderation system | Local storage                  |
+| Permission Settings | Role IDs, permission configurations                         | Access control    | Local storage                  |
 
 ### 4.2 Data We Do NOT Collect
 
@@ -91,6 +92,7 @@ Liofa collects and stores the following data to provide its services:
 ### 4.3 Data Usage
 
 We use the collected data only for:
+
 - Operating the Bot's main features
 - Server-specific configuration and moderation
 - Maintaining warning systems and moderation logs
@@ -98,6 +100,7 @@ We use the collected data only for:
 ### 4.4 Data Sharing
 
 We do NOT:
+
 - Sell your data to third parties
 - Share data with advertisers
 - Use data for purposes outside the Bot's functionality
@@ -164,6 +167,7 @@ WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:
 - **Warranties that defects will be corrected or that the Bot is free of viruses or harmful components**
 
 We make no warranty that:
+
 - The Bot will meet your requirements or expectations
 - The Bot will be available at any particular time or location
 - Any errors or defects will be corrected
@@ -194,6 +198,7 @@ You can stop using the Bot at any time by removing it from your server.
 ### 10.2 Termination by Us
 
 We reserve the right to:
+
 - Limit or terminate access to the Bot for any server or user
 - Remove the Bot from servers that break these Terms
 - Discontinue the Bot entirely with or without notice
@@ -261,4 +266,4 @@ By using Liofa, you confirm that you have read, understand, and agree to these T
 
 ---
 
-*These Terms of Service are effective as of the date listed above and apply to all users of the Liofa Discord bot.*
+_These Terms of Service are effective as of the date listed above and apply to all users of the Liofa Discord bot._
